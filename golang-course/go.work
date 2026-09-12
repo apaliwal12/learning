@@ -1,0 +1,30 @@
+go 1.25.0
+
+use (
+	./appendix_a_antipatterns
+	./appendix_b_patterns
+	./appendix_c_ecosystem
+	./appendix_d_interview
+	./module01_fundamentals
+	./module02_functions_closures
+	./module03_data_structures
+	./module04_strings_runes
+	./module05_interfaces
+	./module06_packages
+	./module07_io_encoding
+	./module08_time
+	./module09_concurrency
+	./module10_advanced_concurrency
+	./module11_http
+	./module12_databases
+	./module13_crypto
+	./module14_robustness
+	./module15_observability
+	./module16_modern_go
+	./module17_build
+	./module18_internals
+	./project_a_scraper
+	./project_b_load_balancer
+	./project_c_grpc
+	./project_d_kvstore
+)

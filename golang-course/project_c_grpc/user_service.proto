@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+// ─────── PROJECT C: gRPC & PROTOBUF ───────
+// Protocol Buffers (protobuf) is a language-neutral, platform-neutral
+// mechanism for serializing structured data. It's smaller and faster than JSON.
+//
+// gRPC is an RPC framework that uses HTTP/2 and Protobuf.
+// You write this .proto file, and then use the `protoc` compiler to generate
+// the Go code for both the Client and the Server!
+
+package users;
+
+// The Go package where the generated code will live
+option go_package = "github.com/user/golang-course/project_c_grpc/proto";
+
+// 1. Define the Data Structures (Messages)
+message User {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+message GetUserRequest {
+  int32 id = 1;
+}
+
+message GetUserResponse {
+  User user = 1;
+}
+
+// 2. Define the Service (The API Endpoints)
+service UserService {
+  // A simple unary RPC (Send 1 request, get 1 response)
+  rpc GetUser(GetUserRequest) returns (GetUserResponse) {}
+  
+  // (gRPC also supports Server Streaming, Client Streaming, and Bidirectional Streaming!)
+}
